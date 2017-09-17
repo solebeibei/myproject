@@ -40,4 +40,47 @@
     <build>
         <finalName>com.liyang.web</finalName>
     </build>
+
+    <profiles>
+        <profile>
+            <id>development</id>
+            <build>
+                <resources>
+                    <resource>
+                        <directory>src/main/profiles/development</directory>
+                    </resource>
+                </resources>
+            </build>
+            <properties>
+                <order-router-type>development</order-router-type>
+            </properties>
+        </profile>
+        <profile>
+            <id>production</id>
+            <build>
+                <resources>
+                    <resource>
+                        <directory>src/main/profiles/production</directory>
+                    </resource>
+                </resources>
+            </build>
+            <properties>
+                <order-router-type>production</order-router-type>
+            </properties>
+        </profile>
+
+        <profile>
+            <id>unit-test</id>
+            <build>
+                <resources>
+                    <resource>
+                        <directory>src/main/profiles/development</directory>
+                    </resource>
+                </resources>
+            </build>
+            <properties>
+                <order-router-type>development</order-router-type>
+            </properties>
+        </profile>
+    </profiles>
 </project>
