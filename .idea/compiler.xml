@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <annotationProcessing>
+      <profile name="Maven default annotation processors profile" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <module name="com-liyang-dao" />
+        <module name="com-liyang-manager" />
+        <module name="com-liyang-service" />
+        <module name="com-liyang-web" />
+        <module name="com-liyangman-web" />
+      </profile>
+    </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="com-liyang-dao" target="1.5" />
+      <module name="com-liyang-manager" target="1.5" />
+      <module name="com-liyang-service" target="1.5" />
+      <module name="com-liyang-web" target="1.5" />
+      <module name="com-liyangman-web" target="1.5" />
+      <module name="myproject" target="1.5" />
+    </bytecodeTargetLevel>
+  </component>
+</project>

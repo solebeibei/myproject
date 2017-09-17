@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/com-liyang-dao/com-liyang-dao.iml" filepath="$PROJECT_DIR$/com-liyang-dao/com-liyang-dao.iml" />
+      <module fileurl="file://$PROJECT_DIR$/com-liyang-manager/com-liyang-manager.iml" filepath="$PROJECT_DIR$/com-liyang-manager/com-liyang-manager.iml" />
+      <module fileurl="file://$PROJECT_DIR$/com-liyang-service/com-liyang-service.iml" filepath="$PROJECT_DIR$/com-liyang-service/com-liyang-service.iml" />
+      <module fileurl="file://$PROJECT_DIR$/com-liyang-web/com-liyang-web.iml" filepath="$PROJECT_DIR$/com-liyang-web/com-liyang-web.iml" />
+      <module fileurl="file://$PROJECT_DIR$/com-liyangman-web/com-liyangman-web.iml" filepath="$PROJECT_DIR$/com-liyangman-web/com-liyangman-web.iml" />
+      <module fileurl="file://$PROJECT_DIR$/myproject.iml" filepath="$PROJECT_DIR$/myproject.iml" />
+    </modules>
+  </component>
+</project>

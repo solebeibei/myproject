@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="war" name="com-liyangman-web:war">
+    <output-path>$PROJECT_DIR$/com-liyangman-web/target</output-path>
+    <root id="archive" name="com.liyangman.web.war">
+      <element id="artifact" artifact-name="com-liyangman-web:war exploded" />
+    </root>
+  </artifact>
+</component>
