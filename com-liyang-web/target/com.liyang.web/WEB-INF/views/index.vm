@@ -1,9 +1,0 @@
-<html>
-<body>
-<h2>111111111111111111111</h2>
-
-用户名：<input id="id"  name="id">
-密码：<input id="pwd"  name="pwd">
-
-</body>
-</html>

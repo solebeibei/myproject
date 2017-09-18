@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:tx="http://www.springframework.org/schema/tx"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx.xsd">
+
+
+
+    <!--主库配置-->
+    <!--<bean id="yctDataSourcePool" class="com.alibaba.druid.pool.DruidDataSource" init-method="init" destroy-method="close">-->
+        <!--<property name="driverClassName" value="${yct.admin.jdba.driver}"/>-->
+        <!--<property name="url" value="${yct.admin.jdbc.url}"/>-->
+        <!--<property name="username" value="${yct.admin.jdbc.username}"/>-->
+        <!--<property name="password" value="${yct.admin.jdbc.password}"/>-->
+        <!--<property value="15000" name="maxWait"/>-->
+        <!--<property value="true" name="useUnfairLock"/>-->
+        <!--<property value="2" name="initialSize"/>-->
+        <!--<property value="2" name="minIdle"/>-->
+        <!--<property value="100" name="maxActive"/>-->
+        <!--<property name="removeAbandoned" value="false" />-->
+        <!--<property value="60000" name="timeBetweenEvictionRunsMillis"/>-->
+        <!--<property value="180000" name="minEvictableIdleTimeMillis"/>-->
+        <!--<property value="SELECT 'x'" name="validationQuery"/>-->
+        <!--<property value="true" name="testWhileIdle"/>-->
+        <!--<property value="false" name="testOnBorrow"/>-->
+        <!--<property value="false" name="testOnReturn"/>-->
+        <!--<property value="false" name="poolPreparedStatements"/>-->
+        <!--<property value="-1" name="maxPoolPreparedStatementPerConnectionSize"/>-->
+        <!--<property value="stat" name="filters"/>-->
+    <!--</bean>-->
+
+    <!--&lt;!&ndash;从库数据源&ndash;&gt;-->
+    <!--<bean id="yctSlaveDataSourcePool" class="com.alibaba.druid.pool.DruidDataSource" init-method="init" destroy-method="close">-->
+        <!--<property name="driverClassName" value="${yct.slave.jdbc.driver}"/>-->
+        <!--<property name="url" value="${yct.slave.jdbc.url}"/>-->
+        <!--<property name="username" value="${yct.slave.jdbc.username}"/>-->
+        <!--<property name="password" value="${yct.slave.jdbc.password}"/>-->
+        <!--<property value="15000" name="maxWait"/>-->
+        <!--<property value="true" name="useUnfairLock"/>-->
+        <!--<property value="2" name="initialSize"/>-->
+        <!--<property value="2" name="minIdle"/>-->
+        <!--<property value="20" name="maxActive"/>-->
+        <!--<property name="removeAbandoned" value="false" />-->
+        <!--<property value="60000" name="timeBetweenEvictionRunsMillis"/>-->
+        <!--<property value="180000" name="minEvictableIdleTimeMillis"/>-->
+        <!--<property value="SELECT 'x'" name="validationQuery"/>-->
+        <!--<property value="true" name="testWhileIdle"/>-->
+        <!--<property value="false" name="testOnBorrow"/>-->
+        <!--<property value="false" name="testOnReturn"/>-->
+        <!--<property value="false" name="poolPreparedStatements"/>-->
+        <!--<property value="-1" name="maxPoolPreparedStatementPerConnectionSize"/>-->
+        <!--<property value="stat" name="filters"/>-->
+    <!--</bean>-->
+
+
+    <bean id="datasource" class="org.springframework.jdbc.datasource.DriverManagerDataSource">
+        <property name="url" value="jdbc:mysql://localhost:3306/test"/>
+        <property name="driverClassName" value="com.mysql.jdbc.Driver"/>
+        <property name="username" value="root"/>
+        <property name="password" value="liyang"/>
+    </bean>
+
+    <!--mybatis 的 sqlsessionFactoryNean-->
+    <bean id="sqlSessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean">
+        <property name="dataSource" ref="datasource"/>
+        <property name="configLocation" value="classpath:mybatis-config.xml"/>
+        <property name="mapperLocations" value="classpath:mapper/*.xml"/>
+        <property name="typeAliasesPackage" value="com.liyang.model"/><!--指定实体类包，自动将实体类的简单类名映射为别名-->
+    </bean>
+
+    <!--mybatis自动扫描加载sql映射文件:mapperScannerConfigurer-->
+    <bean class="org.mybatis.spring.mapper.MapperScannerConfigurer">
+        <property name="basePackage" value="com.liyang"/><!--指定sql映射文件、接口所在的包-->
+        <property name="sqlSessionFactoryBeanName" value="sqlSessionFactory"/>
+    </bean>
+
+    <!--事务管理器-->
+    <bean id="transactionManager" class="org.springframework.jdbc.datasource.DataSourceTransactionManager">
+        <property name="dataSource" ref="datasource"/>
+    </bean>
+
+    <!--声明事务-->
+    <tx:annotation-driven transaction-manager="transactionManager"/>
+
+</beans>

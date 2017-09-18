@@ -4,7 +4,10 @@ import com.liyang.model.Article;
 import com.liyang.model.ArticleExample;
 import java.util.List;
 import org.apache.ibatis.annotations.Param;
+import org.springframework.stereotype.Component;
+import org.springframework.transaction.annotation.Transactional;
 
+@Transactional
 public interface ArticleMapper {
     long countByExample(ArticleExample example);
 

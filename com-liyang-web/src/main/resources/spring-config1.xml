@@ -6,12 +6,12 @@
     <bean class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
         <property name="locations">
             <list>
-                <value>classpath:important.properties</value>
+                <value>classpath:important1.properties</value>
             </list>
         </property>
     </bean>
 
-    <!--<import resource="spring-config-datasource-druid.xml" />-->
+    <import resource="spring-config-datasource-druid1.xml" />
     <!--<import resource="spring-config-dao.xml" />-->
     <!--<import resource="spring-config-authen.xml" />-->
     <import resource="spring-config-web1.xml" />
