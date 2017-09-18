@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <bean class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
+        <property name="locations">
+            <list>
+                <value>classpath:important.properties</value>
+            </list>
+        </property>
+    </bean>
+
+    <!--<import resource="spring-config-datasource-druid.xml" />-->
+    <!--<import resource="spring-config-dao.xml" />-->
+    <!--<import resource="spring-config-authen.xml" />-->
+    <import resource="spring-config-web1.xml" />
+    <!--<import resource="spring-jsf-consumer.xml"/>-->
+    <!--<import resource="spring-config-util.xml"/>-->
+</beans>
