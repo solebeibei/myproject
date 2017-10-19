@@ -28,11 +28,4 @@
 
 
     </typeAliases>
-
-
-    <!--<mappers>-->
-        <!--<mapper resource="mapper/ArticleMapper.xml"/>-->
-    <!--</mappers>-->
-
-
 </configuration>

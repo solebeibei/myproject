@@ -1,3 +1,5 @@
+import com.liyang.controller.index.IndexService;
+import com.liyang.controller.order.OrderService;
 import com.liyang.dao.ArticleMapper;
 import com.liyang.model.Article;
 import org.junit.Test;
@@ -18,13 +20,16 @@ public class MyTest {
     @Autowired
     private ArticleMapper articleMapper;
 
+    @Autowired
+    private OrderService orderService;
     @Test
     public void testPayFina() throws Exception {
         Article article = new Article();
-        article.setId(2222);
-        article.setCategoryId(2342);
-        article.setName("dddddd111");
-        int result = articleMapper.insert(article);
+        article.setId(20003);
+        article.setCategoryId(20003);
+        article.setName("20003");
+       // int result = articleMapper.insert(article);
+        int result=orderService.insertOrder(article);
         System.out.println(
                 result
         );
