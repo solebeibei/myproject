@@ -1,5 +1,5 @@
+import com.liyang.dao.Article;
 import com.liyang.dao.ArticleMapper;
-import com.liyang.model.Article;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;

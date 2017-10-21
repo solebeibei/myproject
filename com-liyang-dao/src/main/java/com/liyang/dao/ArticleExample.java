@@ -1,4 +1,4 @@
-package com.liyang.model;
+package com.liyang.dao;
 
 import java.util.ArrayList;
 import java.util.List;

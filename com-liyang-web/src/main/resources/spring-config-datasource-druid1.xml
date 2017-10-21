@@ -5,51 +5,50 @@
        xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx.xsd http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop.xsd">
 
 
-
     <!--主库配置-->
     <!--<bean id="masterDataSource" class="com.alibaba.druid.pool.DruidDataSource" init-method="init" destroy-method="close">-->
-        <!--<property name="driverClassName" value="com.mysql.jdbc.Driver"/>-->
-        <!--<property name="url" value="${yct.admin.jdbc.url}"/>-->
-        <!--<property name="username" value="${yct.admin.jdbc.username}"/>-->
-        <!--<property name="password" value="${yct.admin.jdbc.password}"/>-->
-        <!--<property value="15000" name="maxWait"/>-->
-        <!--<property value="true" name="useUnfairLock"/>-->
-        <!--<property value="2" name="initialSize"/>-->
-        <!--<property value="2" name="minIdle"/>-->
-        <!--<property value="100" name="maxActive"/>-->
-        <!--<property name="removeAbandoned" value="false" />-->
-        <!--<property value="60000" name="timeBetweenEvictionRunsMillis"/>-->
-        <!--<property value="180000" name="minEvictableIdleTimeMillis"/>-->
-        <!--<property value="SELECT 'x'" name="validationQuery"/>-->
-        <!--<property value="true" name="testWhileIdle"/>-->
-        <!--<property value="false" name="testOnBorrow"/>-->
-        <!--<property value="false" name="testOnReturn"/>-->
-        <!--<property value="false" name="poolPreparedStatements"/>-->
-        <!--<property value="-1" name="maxPoolPreparedStatementPerConnectionSize"/>-->
-        <!--<property value="stat" name="filters"/>-->
+    <!--<property name="driverClassName" value="com.mysql.jdbc.Driver"/>-->
+    <!--<property name="url" value="${yct.admin.jdbc.url}"/>-->
+    <!--<property name="username" value="${yct.admin.jdbc.username}"/>-->
+    <!--<property name="password" value="${yct.admin.jdbc.password}"/>-->
+    <!--<property value="15000" name="maxWait"/>-->
+    <!--<property value="true" name="useUnfairLock"/>-->
+    <!--<property value="2" name="initialSize"/>-->
+    <!--<property value="2" name="minIdle"/>-->
+    <!--<property value="100" name="maxActive"/>-->
+    <!--<property name="removeAbandoned" value="false" />-->
+    <!--<property value="60000" name="timeBetweenEvictionRunsMillis"/>-->
+    <!--<property value="180000" name="minEvictableIdleTimeMillis"/>-->
+    <!--<property value="SELECT 'x'" name="validationQuery"/>-->
+    <!--<property value="true" name="testWhileIdle"/>-->
+    <!--<property value="false" name="testOnBorrow"/>-->
+    <!--<property value="false" name="testOnReturn"/>-->
+    <!--<property value="false" name="poolPreparedStatements"/>-->
+    <!--<property value="-1" name="maxPoolPreparedStatementPerConnectionSize"/>-->
+    <!--<property value="stat" name="filters"/>-->
     <!--</bean>-->
 
     <!--&lt;!&ndash;&lt;!&ndash;从库数据源&ndash;&gt;&ndash;&gt;-->
     <!--<bean id="slave1DataSource" class="com.alibaba.druid.pool.DruidDataSource" init-method="init" destroy-method="close">-->
-        <!--<property name="driverClassName" value="com.mysql.jdbc.Driver"/>-->
-        <!--<property name="url" value="${yct.slave.jdbc.url}"/>-->
-        <!--<property name="username" value="${yct.slave.jdbc.username}"/>-->
-        <!--<property name="password" value="${yct.slave.jdbc.password}"/>-->
-        <!--<property value="15000" name="maxWait"/>-->
-        <!--<property value="true" name="useUnfairLock"/>-->
-        <!--<property value="2" name="initialSize"/>-->
-        <!--<property value="2" name="minIdle"/>-->
-        <!--<property value="20" name="maxActive"/>-->
-        <!--<property name="removeAbandoned" value="false" />-->
-        <!--<property value="60000" name="timeBetweenEvictionRunsMillis"/>-->
-        <!--<property value="180000" name="minEvictableIdleTimeMillis"/>-->
-        <!--<property value="SELECT 'x'" name="validationQuery"/>-->
-        <!--<property value="true" name="testWhileIdle"/>-->
-        <!--<property value="false" name="testOnBorrow"/>-->
-        <!--<property value="false" name="testOnReturn"/>-->
-        <!--<property value="false" name="poolPreparedStatements"/>-->
-        <!--<property value="-1" name="maxPoolPreparedStatementPerConnectionSize"/>-->
-        <!--<property value="stat" name="filters"/>-->
+    <!--<property name="driverClassName" value="com.mysql.jdbc.Driver"/>-->
+    <!--<property name="url" value="${yct.slave.jdbc.url}"/>-->
+    <!--<property name="username" value="${yct.slave.jdbc.username}"/>-->
+    <!--<property name="password" value="${yct.slave.jdbc.password}"/>-->
+    <!--<property value="15000" name="maxWait"/>-->
+    <!--<property value="true" name="useUnfairLock"/>-->
+    <!--<property value="2" name="initialSize"/>-->
+    <!--<property value="2" name="minIdle"/>-->
+    <!--<property value="20" name="maxActive"/>-->
+    <!--<property name="removeAbandoned" value="false" />-->
+    <!--<property value="60000" name="timeBetweenEvictionRunsMillis"/>-->
+    <!--<property value="180000" name="minEvictableIdleTimeMillis"/>-->
+    <!--<property value="SELECT 'x'" name="validationQuery"/>-->
+    <!--<property value="true" name="testWhileIdle"/>-->
+    <!--<property value="false" name="testOnBorrow"/>-->
+    <!--<property value="false" name="testOnReturn"/>-->
+    <!--<property value="false" name="poolPreparedStatements"/>-->
+    <!--<property value="-1" name="maxPoolPreparedStatementPerConnectionSize"/>-->
+    <!--<property value="stat" name="filters"/>-->
     <!--</bean>-->
 
     <bean id="datasourceMaster" class="org.springframework.jdbc.datasource.DriverManagerDataSource">
@@ -78,12 +77,12 @@
         <property name="dataSource" ref="dataSource"/>
         <property name="configLocation" value="classpath:mybatis-config.xml"/>
         <property name="mapperLocations" value="classpath:mapper/*.xml"/>
-        <property name="typeAliasesPackage" value="com.liyang.model"/><!--指定实体类包，自动将实体类的简单类名映射为别名-->
+        <property name="typeAliasesPackage" value="com.liyang.dao"/><!--指定实体类包，自动将实体类的简单类名映射为别名-->
     </bean>
 
     <!--mybatis自动扫描加载sql映射文件:mapperScannerConfigurer-->
     <bean class="org.mybatis.spring.mapper.MapperScannerConfigurer">
-        <property name="basePackage" value="com.liyang"/><!--指定sql映射文件、接口所在的包-->
+        <property name="basePackage" value="com.liyang.dao"/><!--指定sql映射文件、接口所在的包-->
         <property name="sqlSessionFactoryBeanName" value="sqlSessionFactory"/>
     </bean>
 
@@ -92,7 +91,7 @@
         <property name="dataSource" ref="dataSource"/>
     </bean>
 
-    <bean id="switcher" class="com.liyang.web.aop.DataSourceSwitcher" >
+    <bean id="switcher" class="com.liyang.web.aop.DataSourceSwitcher">
         <property name="slaves">
             <list>
                 <value>slave1</value>
@@ -104,17 +103,17 @@
         <property name="switcher" ref="switcher"></property>
         <property name="targetDataSources">
             <map key-type="java.lang.String">
-                <entry key="master" value-ref="datasourceMaster" />
-                <entry key="slave1" value-ref="datasourceSlave" />
+                <entry key="master" value-ref="datasourceMaster"/>
+                <entry key="slave1" value-ref="datasourceSlave"/>
             </map>
         </property>
-        <property name="defaultTargetDataSource" ref="datasourceMaster" />
+        <property name="defaultTargetDataSource" ref="datasourceMaster"/>
     </bean>
 
     <!--声明事务-->
     <tx:annotation-driven transaction-manager="transactionManager"/>
 
-    <bean id="dataSourceAdvice" class="com.liyang.web.aop.DataSourceAdvice" >
+    <bean id="dataSourceAdvice" class="com.liyang.web.aop.DataSourceAdvice">
         <property name="switcher" ref="switcher"></property>
         <property name="readMethodNames">
             <list>
@@ -131,10 +130,10 @@
             </list>
         </property>
     </bean>
-
+    <!--pointcut="execution(* com.liyang..*Service*.*(..))" order="1"-->
     <aop:config>
-        <aop:advisor
-                pointcut="execution(* com.liyang..*Service*.*(..))" order="1"
-                advice-ref="dataSourceAdvice" />
+        <aop:pointcut id="proxyPointCut" expression="execution(* com.liyang.service.order..*Service*.*(..)))"/>
+        <aop:advisor advice-ref="dataSourceAdvice" pointcut-ref="proxyPointCut"/>
     </aop:config>
+
 </beans>

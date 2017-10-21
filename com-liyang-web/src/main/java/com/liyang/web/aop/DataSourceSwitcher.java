@@ -1,5 +1,7 @@
 package com.liyang.web.aop;
 
+import org.springframework.stereotype.Component;
+
 import java.util.List;
 import java.util.concurrent.atomic.AtomicInteger;
 

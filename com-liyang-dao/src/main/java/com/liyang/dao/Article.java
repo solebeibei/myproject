@@ -1,4 +1,4 @@
-package com.liyang.model;
+package com.liyang.dao;
 
 import java.io.Serializable;
 

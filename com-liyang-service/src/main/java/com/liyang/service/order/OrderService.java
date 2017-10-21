@@ -1,6 +1,6 @@
-package com.liyang.order;
+package com.liyang.service.order;
 
-import com.liyang.model.Article;
+import com.liyang.dao.Article;
 
 /**
  * Created by liyang21 on 2017/10/20.

@@ -2,6 +2,7 @@ package com.liyang.web.aop;
 
 import org.springframework.aop.AfterReturningAdvice;
 import org.springframework.aop.MethodBeforeAdvice;
+import org.springframework.stereotype.Component;
 
 import java.lang.reflect.Method;
 import java.util.List;
@@ -9,6 +10,7 @@ import java.util.List;
 /**
  * Created by liyang21 on 2017/9/20.
  */
+
 public class DataSourceAdvice implements MethodBeforeAdvice, AfterReturningAdvice {
 
     private DataSourceSwitcher switcher;

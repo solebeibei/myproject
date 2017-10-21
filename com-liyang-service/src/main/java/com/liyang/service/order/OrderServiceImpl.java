@@ -1,7 +1,7 @@
-package com.liyang.order;
+package com.liyang.service.order;
 
+import com.liyang.dao.Article;
 import com.liyang.dao.ArticleMapper;
-import com.liyang.model.Article;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

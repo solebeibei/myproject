@@ -5,7 +5,7 @@ import org.springframework.jdbc.datasource.lookup.AbstractRoutingDataSource;
 /**
  * Created by liyang21 on 2017/9/20.
  */
-public class DynamicDataSource  extends AbstractRoutingDataSource {
+public class DynamicDataSource extends AbstractRoutingDataSource {
 
     private DataSourceSwitcher switcher;
 
