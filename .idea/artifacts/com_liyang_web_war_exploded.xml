@@ -39,6 +39,7 @@
           <element id="library" level="project" name="Maven: antlr:antlr:2.7.2" />
           <element id="library" level="project" name="Maven: org.apache.struts:struts-taglib:1.3.8" />
           <element id="library" level="project" name="Maven: org.apache.struts:struts-tiles:1.3.8" />
+          <element id="library" level="project" name="Maven: org.aspectj:aspectjweaver:1.8.11" />
           <element id="library" level="project" name="Maven: org.springframework:spring-webmvc:4.3.11.RELEASE" />
           <element id="library" level="project" name="Maven: org.springframework:spring-aop:4.3.11.RELEASE" />
           <element id="library" level="project" name="Maven: org.springframework:spring-beans:4.3.11.RELEASE" />
