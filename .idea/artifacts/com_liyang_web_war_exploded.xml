@@ -1,13 +1,20 @@
 <component name="ArtifactManager">
   <artifact type="exploded-war" name="com-liyang-web:war exploded">
     <output-path>$PROJECT_DIR$/com-liyang-web/target/com.liyang.web</output-path>
+    <properties id="maven-jee-properties">
+      <options>
+        <exploded>true</exploded>
+        <module>com-liyang-web</module>
+        <packaging>war</packaging>
+      </options>
+    </properties>
     <root id="root">
       <element id="directory" name="WEB-INF">
         <element id="directory" name="classes">
           <element id="module-output" name="com-liyang-web" />
         </element>
         <element id="directory" name="lib">
-          <element id="library" level="project" name="Maven: junit:junit:4.12" />
+          <element id="library" level="project" name="Maven: junit:junit:4.13-beta-3" />
           <element id="library" level="project" name="Maven: org.hamcrest:hamcrest-core:1.3" />
           <element id="archive" name="com-liyang-service-1.0-SNAPSHOT.jar">
             <element id="module-output" name="com-liyang-service" />
@@ -20,7 +27,8 @@
           </element>
           <element id="library" level="project" name="Maven: org.mybatis:mybatis-spring:1.3.0" />
           <element id="library" level="project" name="Maven: org.mybatis:mybatis:3.4.4" />
-          <element id="library" level="project" name="Maven: mysql:mysql-connector-java:5.1.38" />
+          <element id="library" level="project" name="Maven: mysql:mysql-connector-java:8.0.16" />
+          <element id="library" level="project" name="Maven: com.google.protobuf:protobuf-java:3.6.1" />
           <element id="library" level="project" name="Maven: org.mybatis.generator:mybatis-generator-core:1.3.5" />
           <element id="library" level="project" name="Maven: org.apache.velocity:velocity:1.7" />
           <element id="library" level="project" name="Maven: commons-collections:commons-collections:3.2.1" />

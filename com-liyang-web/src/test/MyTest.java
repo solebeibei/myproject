@@ -29,4 +29,8 @@ public class MyTest {
                 result
         );
     }
+    @Test
+    public  void  hello(){
+        System.out.println("111");
+    }
 }

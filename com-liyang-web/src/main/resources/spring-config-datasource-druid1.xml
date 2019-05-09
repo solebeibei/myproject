@@ -58,7 +58,7 @@
         <property name="url" value="jdbc:mysql://localhost:3306/test"/>
         <property name="driverClassName" value="com.mysql.jdbc.Driver"/>
         <property name="username" value="root"/>
-        <property name="password" value="liyang"/>
+        <property name="password" value="12345678"/>
     </bean>
 
     <!--mybatis 的 sqlsessionFactoryNean-->
@@ -88,41 +88,8 @@
         </property>
     </bean>
 
-    <bean id="dataSource" class="com.liyang.web.aop.DynamicDataSource">
-        <property name="switcher" ref="switcher"></property>
-        <property name="targetDataSources">
-            <map key-type="java.lang.String">
-                <entry key="master" value-ref="masterDataSource" />
-                <entry key="slave1" value-ref="slave1DataSource" />
-            </map>
-        </property>
-        <property name="defaultTargetDataSource" ref="masterDataSource" />
-    </bean>
 
     <!--声明事务-->
     <tx:annotation-driven transaction-manager="transactionManager"/>
 
-    <bean id="dataSourceAdvice" class="com.liyang.web.aop.DataSourceAdvice" >
-        <property name="switcher" ref="switcher"></property>
-        <property name="readMethodNames">
-            <list>
-                <value>query</value>
-                <value>use</value>
-                <value>get</value>
-                <value>count</value>
-                <value>find</value>
-                <value>list</value>
-                <value>load</value>
-                <value>search</value>
-                <value>populate</value>
-                <value>login</value>
-            </list>
-        </property>
-    </bean>
-
-    <aop:config>
-        <aop:advisor
-                pointcut="execution(* com.liyang..*Service*.*(..))" order="1"
-                advice-ref="dataSourceAdvice" />
-    </aop:config>
 </beans>
