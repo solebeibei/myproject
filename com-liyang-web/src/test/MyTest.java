@@ -21,7 +21,6 @@ public class MyTest {
     @Test
     public void testPayFina() throws Exception {
         Article article = new Article();
-        article.setId(2222);
         article.setCategoryId(2342);
         article.setName("dddddd111");
         int result = articleMapper.insert(article);
