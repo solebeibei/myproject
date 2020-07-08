@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <beans xmlns="http://www.springframework.org/schema/beans"
-       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:aop="http://www.springframework.org/schema/aop"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop.xsd">
 
     <bean class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
         <property name="locations">
@@ -11,10 +11,31 @@
         </property>
     </bean>
 
-    <import resource="spring-config-datasource-druid1.xml" />
+<!--        <import resource="spring-config-datasource-druid1.xml" />-->
     <!--<import resource="spring-config-dao.xml" />-->
     <!--<import resource="spring-config-authen.xml" />-->
-    <import resource="spring-config-web1.xml" />
+    <!--    <import resource="spring-config-web1.xml" />-->
     <!--<import resource="spring-jsf-consumer.xml"/>-->
     <!--<import resource="spring-config-util.xml"/>-->
+
+
+    <aop:config>
+        <aop:aspect id="TestAspect" ref="aspectBean">
+            <!--配置com.spring.service包下所有类或接口的所有方法-->
+            <aop:pointcut id="businessService" expression="execution(* com.liyang.web.service.demo.*.*(..))"/>
+            <aop:before pointcut-ref="businessService" method="doBefore"/>
+            <aop:after pointcut-ref="businessService" method="doAfter"/>
+            <aop:around pointcut-ref="businessService" method="doAround"/>
+            <aop:after-throwing pointcut-ref="businessService" method="doThrowing" throwing="ex"/>
+        </aop:aspect>
+    </aop:config>
+
+    <bean id="aspectBean" class="com.liyang.web.service.demo.TestAspect"/>
+    <bean id="aService" class="com.liyang.web.service.demo.AServiceImpl"></bean>
+    <bean id="bService" class="com.liyang.web.service.demo.BServiceImpl"></bean>
+
+
+    <bean id="messageService" class="com.liyang.web.service.impl.MessageServiceImpl">
+    </bean>
+
 </beans>

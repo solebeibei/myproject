@@ -26,6 +26,8 @@
           <element id="library" level="project" name="Maven: org.springframework:spring-jdbc:4.3.11.RELEASE" />
           <element id="library" level="project" name="Maven: org.springframework:spring-context-support:4.3.11.RELEASE" />
           <element id="library" level="project" name="Maven: com.alibaba:druid:1.0.29" />
+          <element id="library" level="project" name="Maven: org.aspectj:aspectjrt:1.9.1" />
+          <element id="library" level="project" name="Maven: org.aspectj:aspectjweaver:1.9.1" />
           <element id="library" level="project" name="Maven: com.alibaba:fastjson:1.2.28" />
         </element>
       </element>
